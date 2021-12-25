@@ -289,5 +289,6 @@ public class TestingSystem1 {
 	
 	public void Ex1() {
 		System.out.println("Hello");
+		System.out.println("Goodbye");
 	}
 }
