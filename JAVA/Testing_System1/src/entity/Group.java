@@ -64,8 +64,7 @@ public class Group {
 
 	@Override
 	public String toString() {
-		return "Group [id=" + id + ", name=" + name + ", creator=" + creator + ", createDate=" + createDate
-				+ ", accounts=" + Arrays.toString(accounts) + "]";
+		return "Group [id=" + id + ", name=" + name + ", creator=" + creator + ", createDate=" + createDate + "]";
 	}
 
 }

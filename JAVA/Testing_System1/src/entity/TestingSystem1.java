@@ -1,8 +1,12 @@
 package entity;
 
 import java.time.LocalDate;
+import java.util.Date;
+import java.util.Random;
 
 import entity.Position.PositionName;
+import utils.DateUtil;
+import utils.ScannerUtil;
 
 public class TestingSystem1 {
 	Department dp1, dp2, dp3;
@@ -69,7 +73,7 @@ public class TestingSystem1 {
 
 	}
 
-	public void Ex1q1() {
+	public void ex1q1() {
 		for (int i = 0; i < listAccounts.length; i++) {
 			Account a = listAccounts[i];
 			if (a.getDepartment() == null) {
@@ -89,7 +93,7 @@ public class TestingSystem1 {
 	 * group" Nếu có mặt trong 4 group trở lên thì sẽ in ra text "Nhân viên này là
 	 * người hóng chuyện, tham gia tất cả các group"
 	 */
-	public void Ex1q2() {
+	public void ex1q2() {
 		if (acc2.groups == null) {
 			System.out.println("Nhân viên này chưa có group");
 		} else {
@@ -110,7 +114,7 @@ public class TestingSystem1 {
 	}
 
 	// Sử dụng toán tử ternary để làm Question 1
-	public void Ex1q3() {
+	public void ex1q3() {
 		System.out
 				.println(acc2.department == null ? "Nhân viên này chưa có phòng ban." : "Phòng của nhân viên này là: " +
 
@@ -122,7 +126,7 @@ public class TestingSystem1 {
 	 * 1 Nếu Position = Dev thì in ra text "Đây là Developer" Nếu không phải thì in
 	 * ra text "Người này không phải là Developer"
 	 */
-	public void Ex1q4() {
+	public void ex1q4() {
 
 		System.out.println(
 				acc1.position.name.toString() == "Dev" ? "Đây là Developer" : "Người này không phải là Developer");
@@ -134,7 +138,7 @@ public class TestingSystem1 {
 	 * thì in ra "Nhóm có hai thành viên" Nếu số lượng account = 3 thì in ra
 	 * "Nhóm có ba thành viên" Còn lại in ra "Nhóm có nhiều thành viên"
 	 */
-	public void Ex1q5() {
+	public void ex1q5() {
 		int CountAccInGroup = gr1.accounts.length;
 		switch (CountAccInGroup) {
 		case 1:
@@ -155,7 +159,7 @@ public class TestingSystem1 {
 	}
 
 	// Sử dụng switch case để làm lại Question 2
-	public void Ex1q6() {
+	public void ex1q6() {
 		if (acc2.groups == null) {
 			System.out.println("Nhân viên này chưa có group");
 		} else {
@@ -177,7 +181,7 @@ public class TestingSystem1 {
 	}
 
 	// Sử dụng switch case để làm lại Question 4
-	public void Ex1q7() {
+	public void ex1q7() {
 		String namePosoition = acc1.position.name.toString();
 		switch (namePosoition) {
 		case "Dev":
@@ -190,9 +194,9 @@ public class TestingSystem1 {
 	}
 
 	// In ra thông tin các account bao gồm: Email, FullName và tên phòng ban của họ
-	public void Ex1q8() {
-		Account[] accArray = { acc1, acc2, acc3 };
-		for (Account account : accArray) {
+	public void ex1q8() {
+		Account[] accInf = { acc1, acc2, acc3 };
+		for (Account account : accInf) {
 			System.out.println("AccountID: " + account.id + " Email: " +
 
 					account.email + " Name: " + account.fullName);
@@ -200,9 +204,9 @@ public class TestingSystem1 {
 	}
 
 	// In ra thông tin các phòng ban bao gồm: id và name
-	public void Ex1q9() {
-		Department[] depArray = { dp1, dp2, dp3 };
-		for (Department department : depArray) {
+	public void ex1q9() {
+		Department[] depInf = { dp1, dp2, dp3 };
+		for (Department department : depInf) {
 			System.out.println("DepartmentID: " + department.id + " Name: " + department.name);
 		}
 	}
@@ -215,13 +219,13 @@ public class TestingSystem1 {
 	 * ban: Marketting
 	 */
 
-	public void Ex1q10() {
-		Account[] accArray1 = { acc1, acc2 };
-		for (int i = 0; i < accArray1.length; i++) {
-			System.out.println("Thông tin account thứ " + accArray1[i].id + " là:");
-			System.out.println("Email: " + accArray1[i].email);
-			System.out.println("Full name: " + accArray1[i].fullName);
-			System.out.println("Phòng ban: " + accArray1[i].department.name);
+	public void ex1q10() {
+		Account[] accInf1 = { acc1, acc2 };
+		for (int i = 0; i < accInf1.length; i++) {
+			System.out.println("Thông tin account thứ " + accInf1[i].id + " là:");
+			System.out.println("Email: " + accInf1[i].email);
+			System.out.println("Full name: " + accInf1[i].fullName);
+			System.out.println("Phòng ban: " + accInf1[i].department.name);
 
 		}
 	}
@@ -231,63 +235,187 @@ public class TestingSystem1 {
 	 * tin department thứ 1 là: Id: 1 Name: Sale Thông tin department thứ 2 là: Id:
 	 * 2 Name: Marketing
 	 */
-	public void Ex1q11() {
-		Department[] depArray1 = { dp1, dp2, dp3 };
-		for (int i = 0; i < depArray1.length; i++) {
-			System.out.println("Thông tin department thứ " + depArray1[i] + " là:");
-			System.out.println("Id: " + depArray1[i].id);
-			System.out.println("Name: " + depArray1[i].name);
+	public void ex1q11() {
+		Department[] depInf1 = { dp1, dp2, dp3 };
+		for (int i = 0; i < depInf1.length; i++) {
+			System.out.println("Thông tin department thứ " + depInf1[i] + " là:");
+			System.out.println("Id: " + depInf1[i].id);
+			System.out.println("Name: " + depInf1[i].name);
 		}
 	}
 
 	// Chỉ in ra thông tin 2 department đầu tiên theo định dạng như Question 10
-	public void Ex1q12() {
-		Department[] depArray2 = { dp1, dp2, dp3 };
+	public void ex1q12() {
+		Department[] depInf2 = { dp1, dp2, dp3 };
 		for (int i = 0; i < 2; i++) {
-			System.out.println("Thông tin department thứ " + depArray2[i] + "là:");
-			System.out.println("Id: " + depArray2[i].id);
-			System.out.println("Name: " + depArray2[i].name);
+			System.out.println("Thông tin department thứ " + depInf2[i] + "là:");
+			System.out.println("Id: " + depInf2[i].id);
+			System.out.println("Name: " + depInf2[i].name);
 		}
 	}
 
 	// In ra thông tin tất cả các account ngoại trừ account thứ 2
-	public void Ex1q13() {
-		Account[] accArray2 = { acc1, acc2, acc3 };
-		for (int i = 0; i < accArray2.length; i++) {
-			if (i != 1) {
-				System.out.println("Thông tin account thứ " + accArray2[i] + " là:");
-				System.out.println("Email: " + accArray2[i].email);
-				System.out.println("Full name: " + accArray2[i].fullName);
-				System.out.println("Phòng ban: " + accArray2[i].department.name);
+	public void ex1q13() {
+		Account[] accInf3 = { acc1, acc2, acc3 };
 
+		for (int i = 0; i < accInf3.length; i++) {
+			if (i == 1) {
+				continue;
 			}
+			System.out.println(i);
+			System.out.println("Thông tin account thứ " + accInf3[i].getId() + " là:");
+			System.out.println("Email: " + accInf3[i].email);
+			System.out.println("Full name: " + accInf3[i].fullName);
+			System.out.println("Phòng ban: " + accInf3[i].department.name);
+			System.out.println("----------------");
+
 		}
 	}
 
-	// In ra thông tin tất cả các account có id < 4
-	public void Ex1q14() {
-		Account[] accArray3 = { acc1, acc2, acc3 };
-		for (int i = 0; i < accArray3.length; i++) {
-			if (accArray3[i].id < 4) {
-				System.out.println("Thông tin account thứ " + accArray3[i] + " là:");
-				System.out.println("Email: " + accArray3[i].email);
-				System.out.println("Full name: " + accArray3[i].fullName);
-				System.out.println("Phòng ban: " + accArray3[i].department.name);
+	public void ex1q14() {
+		Account[] accInf4 = { acc1, acc2, acc3 };
+		for (int j = 0; j < accInf4.length; j++) {
+			if (accInf4[j].id < 4) {
+				System.out.println("Thông tin account thứ " + (j + 1) + " là:");
+				System.out.println("Email: " + accInf4[j].email);
+				System.out.println("Full name: " + accInf4[j].fullName);
+				System.out.println("Phòng ban: " + accInf4[j].department.name);
 
 			}
 		}
 	}
 
 	// In ra các số chẵn nhỏ hơn hoặc bằng 20
-	public void Ex1q15() {
+	public void ex1q15() {
 		for (int i = 1; i <= 20; i++) {
 			if (i % 2 == 0) {
 				System.out.print(i + " ");
 			}
 		}
 	}
-	
-	public void Ex1() {
-		System.out.println("Hello");
+
+	// Dung while voi question 10
+	public void ex1q16() {
+		Account[] accInf1 = { acc1, acc2, acc3 };
+		int i = 0;
+		while (i < accInf1.length) {
+			System.out.println("Thông tin account thứ " + accInf1[i].id + " là:");
+			System.out.println("Email: " + accInf1[i].email);
+			System.out.println("Full name: " + accInf1[i].fullName);
+			System.out.println("Phòng ban: " + accInf1[i].department.name);
+			i++;
+		}
+
 	}
+
+	// Dung do while voi question 10
+	public void ex1q17() {
+		Account[] accInf1 = { acc1, acc2, acc3 };
+		int i = 0;
+		do {
+			System.out.println("Thông tin account thứ " + accInf1[i].id + "là:");
+			System.out.println("Email: " + accInf1[i].email);
+			System.out.println("Full name: " + accInf1[i].fullName);
+			System.out.println("Phòng ban: " + accInf1[i].department.name);
+			i++;
+		} while (i < accInf1.length);
+	}
+
+	// Khai báo 1 số nguyên = 5 và sử dụng lệnh System out printf để in ra số
+	public void ex2q1() {
+		int i = 5;
+		System.out.printf("%d%n", i);
+
+	}
+
+//	Khai báo 1 số thực = 5,567098 và sử dụng lệnh System out printf để in ra số
+	// thực đó chỉ bao gồm 4 số đằng sau
+	public void ex2q3() {
+		float a = 5.567098f;
+		System.out.printf("%5.4f%n", a);
+	}
+
+//	Khai báo Họ và tên của 1 học sinh và in ra họ và tên học sinh đó theo định
+//	dạng như sau:
+//	Họ và tên: "Nguyễn Văn A" thì sẽ in ra trên console như sau:
+//	Tên tôi là "Nguyễn Văn A" và tôi đang độc thân.
+	public void ex2q4() {
+		String s = "Nguyễn Văn A";
+		System.out.printf("Tên tôi là " + s + " và tôi đang độc thân ");
+	}
+
+	public void ex2q15() {
+		String date = DateUtil.dateToStr(new Date(), "yyyy-MM-dd");
+		System.out.println(date);
+	}
+
+	public void q2() {
+		int[] numbers;
+		System.out.println("Nhap vao so luong phan tu cua mang: ");
+		int n = ScannerUtil.scanInt();
+
+		// khoi tao mang voi n phan tu;
+		numbers = new int[n];
+
+		// vong for nhap du lieu vao mang
+		for (int i = 0; i < numbers.length; i++) {
+			System.out.printf("Nhap vao phan tu thu %d => numbers[%d] = ", i + 1, i);
+			numbers[i] = ScannerUtil.scanInt();
+		}
+
+		System.out.println("---- Mang vua nhap la ------");
+		// System.out.println(Arrays.toString(numbers));
+		for (int i = 0; i < numbers.length; i++) {
+			System.out.printf("numbers[%d] = %d \n", i, numbers[i]);
+		}
+	}
+
+	// In ra ngau nhien 1 so nguyen
+	public void ex4q1() {
+		Random random = new Random();
+		int n = random.nextInt();
+		System.out.println("Số ngẫu nhiên: " + n);
+	}
+
+	// Khai báo 1 array bao gồm các tên của các bạn trong lớp, sau đó in ngẫu nhiên
+	// ra tên của 1 bạn
+	public void ex4q3() {
+		Random random = new Random();
+		String[] NameArr = { "A", "B", "D", "E", "F" };
+		int i = random.nextInt(NameArr.length);
+		System.out.println("Tên ngẫu nhiên 1 bạn trong lớp: " + NameArr[i]);
+	}
+
+	// Viết lệnh cho phép người dùng nhập 3 số nguyên vào chương trình
+	public void ex5q1() {
+		System.out.println("Nhập vào 3 số nguyên");
+		System.out.println("Nhập vào số 1: ");
+		int a = ScannerUtil.scanInt();
+		System.out.println("Nhập vào số 2: ");
+		int b = ScannerUtil.scanInt();
+		System.out.println("Nhập vào số 3: ");
+		int c = ScannerUtil.scanInt();
+		System.out.println("Bạn vừa nhập vào các số: " + a + " " + b + " " + c);
+	}
+
+	// Viết lệnh cho phép người dùng nhập vào ngày sinh nhật của họ
+	public void ex5q3() {
+		System.out.println("Mời bạn nhập vào Họ: ");
+		String s1 = ScannerUtil.scanString();
+		System.out.println("Mời bạn nhập vào Tên: ");
+		String s2 = ScannerUtil.scanString();
+		System.out.println("Fullname của bạn là:" + s1 + " " + s2);
+	}
+	//Viết lệnh cho phép người dùng tạo department (viết thành method)
+	public void ex5q6() {
+		System.out.println("Nhập vào thông tin Department cân tạo: ");
+
+				Department dep = new Department();
+				System.out.println("Nhập ID: ");
+				dep.id = ScannerUtil.scanInt();
+				System.out.println("Nhập Name: ");
+				dep.name = ScannerUtil.scanString();
+				System.out.println("Thông tin Department vừa nhập, ID: " + dep.id + " Name: " + dep.name);
+	}
+	
 }

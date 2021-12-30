@@ -111,11 +111,12 @@ public class Account {
 		this.groups = groups;
 	}
 
+	
 	@Override
 	public String toString() {
 		return "Account [id=" + id + ", email=" + email + ", userName=" + userName + ", fullName=" + fullName
 				+ ", department=" + department + ", position=" + position + ", createDate=" + createDate + ", groups="
-				+ Arrays.toString(groups) + "]";
+				+ Arrays.toString(getGroups())+ "]";
 	}
 
 	
