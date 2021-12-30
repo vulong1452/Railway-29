@@ -28,6 +28,15 @@ public class Account {
 		this.department = department;
 		this.position = position;
 	}
+	
+
+	public Account(String email, String userName, String fullName, LocalDate createDate) {
+		super();
+		this.email = email;
+		this.userName = userName;
+		this.fullName = fullName;
+		this.createDate = createDate;
+	}
 
 	public Account(int id, String email, String userName, String fullName, Department department, Position position
 			) {
@@ -45,6 +54,10 @@ public class Account {
 		super();
 		this.id = id;
 		this.userName = userName;
+	}
+
+	public Account() {
+		// TODO Auto-generated constructor stub
 	}
 
 	public int getId() {
