@@ -1,5 +1,6 @@
 package entity;
 
+import java.security.PKCS12Attribute;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.Random;
@@ -406,16 +407,92 @@ public class TestingSystem1 {
 		String s2 = ScannerUtil.scanString();
 		System.out.println("Fullname của bạn là:" + s1 + " " + s2);
 	}
-	//Viết lệnh cho phép người dùng tạo department (viết thành method)
-	public void ex5q6() {
+
+	// Viết lệnh cho phép người dùng tạo department (viết thành method)
+	public static void ex5q6() {
 		System.out.println("Nhập vào thông tin Department cân tạo: ");
 
-				Department dep = new Department();
-				System.out.println("Nhập ID: ");
-				dep.id = ScannerUtil.scanInt();
-				System.out.println("Nhập Name: ");
-				dep.name = ScannerUtil.scanString();
-				System.out.println("Thông tin Department vừa nhập, ID: " + dep.id + " Name: " + dep.name);
+		Department dep = new Department();
+		System.out.println("Nhập ID: ");
+		dep.id = ScannerUtil.scanInt();
+		System.out.println("Nhập Name: ");
+		dep.name = ScannerUtil.scanString();
+		System.out.println("Thông tin Department vừa nhập, ID: " + dep.id + " Name: " + dep.name);
 	}
-	
+
+//	Viết lệnh cho phép người dùng tạo account (viết thành method)
+//	Đối với property Position, Người dùng nhập vào 1 2 3 4 và vào
+//	chương trình sẽ chuyển thành Position.Dev, Position.Test,
+//	Position.ScrumMaster, Position.PM
+	public static void ex5q5() {
+		System.out.println("Mời bạn nhập vào thông tin account cân tạo:");
+		Account acc = new Account();
+		System.out.println("Nhập ID: ");
+		acc.id = ScannerUtil.scanInt();
+		System.out.println("Nhập email: ");
+		acc.email = ScannerUtil.scanString();
+		System.out.println("Nhập userName: ");
+		acc.userName = ScannerUtil.scanString();
+		System.out.println("Nhập fullName: ");
+		acc.fullName = ScannerUtil.scanString();
+		System.out
+				.println("Nhập position (Nhập các số từ 1 đến 4 tương ứng với: 1.Dev, 2.Test, 3.Scrum_Master, 4.PM): ");
+
+		int position = ScannerUtil.scanInt();
+		switch (position) {
+		case 1:
+			Position pos1 = new Position(1, PositionName.Dev);
+			acc.position = pos1;
+			break;
+		case 2:
+			Position pos2 = new Position(2, PositionName.Test);
+			acc.position = pos2;
+			break;
+
+		case 3:
+			Position pos3 = new Position(3, PositionName.PM);
+			acc.position = pos3;
+			break;
+
+		case 4:
+			Position pos4 = new Position(4, PositionName.Scrum_Master);
+			acc.position = pos4;
+			break;
+
+		}
+		System.out.println("Thông tin Acc vừa nhập, ID: " + acc.id + " Email: " + acc.email + " UserName: "
+				+ acc.userName + " FullName: " + acc.fullName + " Position: " + acc.position.name);
+	}
+
+//	Viết chương trình thực hiện theo flow sau:
+//		Bước 1:
+//		Chương trình in ra text "mời bạn nhập vào chức năng muốn sử
+//		dụng"
+//		Bước 2:
+//		Nếu người dùng nhập vào 1 thì sẽ thực hiện tạo account
+//		Nếu người dùng nhập vào 2 thì sẽ thực hiện chức năng tạo
+//		department
+//		Nếu người dùng nhập vào số khác thì in ra text "Mời bạn nhập
+//		lại" và quay trở lại bước 1
+	public static void ex5q8() {
+		int choose;
+		while (true) {
+			System.out.println("Mời bạn chọn chức năng: 1. Tạo Account, 2. Tạo Department");
+
+			choose = ScannerUtil.scanInt();
+			if (choose == 1 || choose == 2) {
+				switch (choose) {
+				case 1:
+					ex5q5();
+					break;
+				case 2:
+					ex5q6();
+					break;
+				}
+				return;
+			} else {
+				System.out.println("Nhập lại: ");
+			}
+		}
+	}
 }
