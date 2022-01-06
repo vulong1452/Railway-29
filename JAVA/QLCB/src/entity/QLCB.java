@@ -32,9 +32,11 @@ public class QLCB {
 				break;
 			}
 			case 3: {
+				findCanBo();
 				break;
 			}
 			case 4: {
+				DelCanBo();
 				break;
 			}
 			case 5: {
@@ -44,6 +46,23 @@ public class QLCB {
 				System.out.println("Chọn sai chức năng. Mời chọn lại !");
 			}
 		} while (selected != 5);
+	}
+
+	private void findCanBo() {
+		System.out.println("Nhập vào tên muốn tìm kiếm: ");
+		String findName = ScannerUtil.scanString();
+		for (CanBo cBo : mangCanBo) {
+			if (cBo.getHoTen().equals(findName)) {
+				System.out.println(cBo);
+			}
+		}
+
+	}
+
+	private void DelCanBo() {
+		System.out.println("Nhập tên cần xóa thông tin: ");
+		String delName = ScannerUtil.scanString();
+		mangCanBo.removeIf(CanBo -> CanBo.getHoTen().equals(delName));
 	}
 
 	// in danh sách cán bộ

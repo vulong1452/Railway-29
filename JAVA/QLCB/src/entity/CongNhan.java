@@ -20,10 +20,6 @@ public class CongNhan extends CanBo {
 	public void setBac(int bac) {
 		this.bac = bac;
 	}
-
-	public String getHoTen() {
-		return "Ten cong nhan la : " + super.getHoTen();
-	}
 	
 	@Override
 	public String toString() {
