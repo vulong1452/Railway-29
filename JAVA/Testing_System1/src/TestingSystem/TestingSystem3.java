@@ -106,6 +106,8 @@ public class TestingSystem3 {
 		String firstName = ScannerUtil.scanString();
 		System.out.println("Nhập tên: ");
 		String lastName = ScannerUtil.scanString();
-		System.out.println("Họ tên đầy đủ: " + firstName + " " +lastName);
+		System.out.println("Họ tên đầy đủ: " + firstName + " " + lastName);
 	}
+
+	
 }
