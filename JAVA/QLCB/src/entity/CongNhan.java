@@ -1,6 +1,6 @@
 package entity;
 
-public class CongNhan extends CanBo {
+public class CongNhan extends CanBo implements Action {
 
 	private int bac;
 
@@ -20,10 +20,16 @@ public class CongNhan extends CanBo {
 	public void setBac(int bac) {
 		this.bac = bac;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "CongNhan [HoTen =" + getHoTen() + ", Tuoi=" + getTuoi() + ", bac=" + bac + "]";
 	}
-	
+
+	@Override
+	public void printInfo() {
+		System.out.println(toString());
+		
+	}
+
 }
