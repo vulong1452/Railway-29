@@ -1,8 +1,9 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import com.vti.utils.ScannerUtil;
+
 import entity.TestingSystem1;
-import utils.ScannerUtil;
 
 public class Main {
 	public static void main(String[] args) {

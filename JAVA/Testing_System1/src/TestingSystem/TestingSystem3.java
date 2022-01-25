@@ -2,8 +2,9 @@ package TestingSystem;
 
 import java.time.LocalDate;
 
+import com.vti.utils.ScannerUtil;
+
 import entity.Account;
-import utils.ScannerUtil;
 
 public class TestingSystem3 {
 //	Khai báo 2 số lương có kiểu dữ liệu là float.

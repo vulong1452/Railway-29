@@ -5,9 +5,10 @@ import java.time.LocalDate;
 import java.util.Date;
 import java.util.Random;
 
+import com.vti.utils.DateUtil;
+import com.vti.utils.ScannerUtil;
+
 import entity.Position.PositionName;
-import utils.DateUtil;
-import utils.ScannerUtil;
 
 public class TestingSystem1 {
 	Department dp1, dp2, dp3;
@@ -116,8 +117,7 @@ public class TestingSystem1 {
 
 	// Sử dụng toán tử ternary để làm Question 1
 	public void ex1q3() {
-		System.out
-				.println(acc2.department == null ? "Nhân viên này chưa có phòng ban." : "Phòng của nhân viên này là: " +
+		System.out.println(acc2.department == null ? "Nhân viên này chưa có phòng ban." : "Phòng của nhân viên này là: " +
 
 						acc2.department.name);
 	}
